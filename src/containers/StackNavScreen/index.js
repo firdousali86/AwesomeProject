@@ -50,21 +50,15 @@ function StackNavScreen() {
           headerShown={false}
           options={{headerMode: 'none', headerShown: false}}
         />
-        <Stack.Screen name="Home" component={DashBoardScreen} />
-        <Stack.Screen name="Details Screen" component={DetailScreen} />
-        <Stack.Screen name="Hooks Screen" component={HooksScreen} />
-        <Stack.Screen name="Navigation" component={NavigationTestScreen} />
       </Stack.Group>
     );
   };
   return (
-    <NavigationContainer independent={true}>
-      <Stack.Navigator
-        screenOptions={styles.screenOptionStyle}
-        initialRouteName="Test">
-        {isUserLoggedIn ? getMainStack() : getAuthStack()}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator
+      screenOptions={styles.screenOptionStyle}
+      initialRouteName="Test">
+      {isUserLoggedIn ? getMainStack() : getAuthStack()}
+    </Stack.Navigator>
   );
 }
 
